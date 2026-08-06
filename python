@@ -1,0 +1,7 @@
+python 
+가상공간 생성
+uv init
+sync
+venv
+ipkernel
+단축기 a/b/m/y
