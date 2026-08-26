@@ -1,0 +1,33 @@
+데이터 불러오기
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('usa_housing.csv')
+df() or df.head()
+
+최근 데이터 필터
+df = df[(df['YearBuilt'] > 2015)]
+범위 좁히기 
+df = df[(df['YearBuilt'] > 2015) & (df['CrimeRate'] < 40)]
+df() or df.head()
+
+그래프로 데이터 분포 확인하기
+plt.figure(figsize=(8, 5))
+plt.scatter(df['SquareFeet'], df['Price'], color='dodgerblue', alpha=0.5, edgecolor='w')
+plt.title('House Area vs Price')
+plt.xlabel('Square Feet (Area)')
+plt.ylabel('Price ($)')
+plt.grid(True, linestyle='--')
+plt.show()
+
+직선 그리기
+
+plt.figure(figsize=(8, 5))
+plt.scatter(X, y, color='dodgerblue', alpha=0.5, edgecolor='w', label='Actual Data')
+plt.plot(X, y_pred, color='crimson', linewidth=3, label='Regression Line')
+plt.title('Linear Regression Prediction')
+plt.xlabel('Square Feet (Area)')
+plt.ylabel('Price ($)')
+plt.legend()
+plt.grid(True, linestyle='--')
+plt.show()
